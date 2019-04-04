@@ -53,7 +53,7 @@ int main()
 	char c2[] = "happy";
 	char c3[6];
 	initializeWordString(c2, c3);
-	//printf("\nThe new string is %s\n ", c3);
+	printf("\nThe new string is %s\n ", c3);
 
 	// demonstrate the use of searchString using the array "happy" and search
 	// for the character 'a'. Then perform the same test with character 'e'
@@ -76,11 +76,10 @@ int countEvenPositive(int a1[], int length)
 {
 	int count = 0;
 	for (int i = 0; i < length; i++) {
-		if ((a1[i] % 2 == 0)&&(a1[i]>=0)) {
+		if ((a1[i] % 2 == 0) && (a1[i] >= 0)) {
 			count++;
 		}
 	}
-	count = count + 1;
 	return count;
 }
 
@@ -142,8 +141,8 @@ int countLetters(char a1[])
 	int i;
 	int count;
 	count = 0;
-	for (i = 0; a1[i] <= '\0'; i++) {
-		if ((a1[i]>='a') && (a1[i]<='z'))
+	for (i = 0; a1[i] != '\0'; i++) {
+		if ((a1[i] >= 'a') && (a1[i] <= 'z'))
 		{
 			count++;
 		}
@@ -166,9 +165,9 @@ int countLetters(char a1[])
 // (five dashes) and then null terminated. 
 void initializeWordString(char base[], char word[])
 {
-	int count=0;
-	int i,j;
-	for (i = 0; base[i] <= '\0'; i++) {
+	int count = 0;
+	int i, j;
+	for (i = 0; base[i] != '\0'; i++) {
 		count++;
 	}
 	j = count;
@@ -193,7 +192,7 @@ int searchString(char a1[], char letterToSearch)
 {
 	int i, count;
 	count = 0;
-	for (i = 0; a1[i] <= '\0'; i++) {
+	for (i = 0; a1[i] != '\0'; i++) {
 		if (a1[i] == letterToSearch) {
 			count++;
 		}
@@ -212,5 +211,3 @@ void displayArray(int a[], int length)
 		printf("%d ", a[i]);
 	}
 }
-
-
